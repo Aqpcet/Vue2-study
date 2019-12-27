@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en>
+
+<head>
+    <meta charst="UTF-8">
+    <title>vue-base</title>
+</head>
+
+    <body>
+
+        <div id="app">
+            {{ message }}
+
+            <h2>
+                {{school.name}}
+                {{school.mobile}}
+            </h2>
+
+            <ul>
+               <li v-for="(item,index) in campus">
+                   {{item}} {{idnex}}
+               </li>
+               
+            </ul>
+        
+        </div>
+
+        <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+        <script>
+            var app=new Vue({
+                el:"#app",
+
+                data:{
+                    message:"hello vue!",
+                    school:{
+                        name:"cc",
+                        mobile:"123456"
+                    },
+                    campus:["北京","广州"],
+                }
+            })
+
+        </script>
+    
+
+    </body>
+
+</html>

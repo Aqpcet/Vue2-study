@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en>
+
+	<head>
+		<meta charst="UTF-8">
+		<title>v-if</title>
+	</head>
+
+	<body>
+
+        <div id="app">
+            <input type="button" value="切换显示" @click="toggleIsShow"/>
+            <p v-if="isShow">呵呵</p>
+        </div>
+		<!-- 开发环境版本，包含了有帮助的命令行警告 -->
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+		<script>
+			var app=new Vue({
+				el:"#app",
+
+				data:{
+                    isShow:true,
+                },
+                
+                methods:{
+                    toggleIsShow:function(){
+                        this.isShow=!this.isShow
+                    }
+                }
+			})
+
+		</script>
+	</body>
+</html>

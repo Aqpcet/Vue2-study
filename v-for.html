@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en>
+
+	<head>
+		<meta charst="UTF-8">
+		<title>v-for</title>
+	</head>
+
+	<body>
+
+        <div id="app">
+            <input type="button" value="添加数据" @click="add">
+            <input type="button" value="移除数据"  @click="remove">
+
+            <ul>
+                <li v-for="(item,index) in arr" :title="item">
+                    {{item}}
+                </li>
+                <li v-for="(item,index) in objArr" :title="item.name">
+                    {{index}}:{{item.name}}
+                </li>
+
+            </ul>
+
+        </div>
+		<!-- 开发环境版本，包含了有帮助的命令行警告 -->
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+		<script>
+			var app=new Vue({
+				el:"#app",
+
+				data:{
+                    arr:[1,2,3,4,5],
+                    objArr:[
+                        {name:"jack"},
+                        {name:"rose"},
+                    ]
+                },
+
+                methods:{
+                    add:function(){
+                        this.objArr.push({name:"cc"});
+                    },
+
+                    remove:function(){
+                        this.objArr.shift();
+                    }
+                }
+			})
+
+		</script>
+	</body>
+</html>

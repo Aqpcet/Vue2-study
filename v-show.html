@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en>
+
+	<head>
+		<meta charst="UTF-8">
+		<title>v-show</title>
+	</head>
+
+	<body>
+
+        <div id="app" style="text-align: center;">
+            <img v-show="isShow" src="/assets/彩虹猫.gif" alt=""/>
+
+            <div>
+                <button @click="changeIsShow">点击切换</button>
+            </div>
+
+            <img v-show="age>=18" src="/assets/彩虹猫.gif" alt=""/>
+        </div>
+		<!-- 开发环境版本，包含了有帮助的命令行警告 -->
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+		<script>
+			var app=new Vue({
+				el:"#app",
+
+				data:{
+                    isShow:true,
+                    age:18
+                },
+                
+                methods:{
+                    changeIsShow:function(){
+                        this.isShow=!this.isShow
+                    }
+                }
+			})
+
+		</script>
+	</body>
+</html>
