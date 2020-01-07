@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en>
 
@@ -9,7 +8,7 @@
 
 	<body>
         <div id="app" class="center" >
-            <img :src="imgArr[index]" />
+            <img :src="imgArr[index]" >{{delay()}}</img>
             <br/>
             <button  @click="prev" v-show="index!=0">上一张</button>
             <button  @click="next" v-show="index<imgArr.length-1">下一张</button>
@@ -28,13 +27,26 @@
                 },
                 
                 methods:{
-                    prev:function(){
+                    
+                    prev(){
                         this.index--;
                     },
 
-                    next:function(){
+                    next(){
                         this.index++;
-                    }
+                    },
+
+                    delay(){
+                        clearTimeout(this.timer);
+
+                        setTimeout(()=>{
+                            if(this.index>=this.imgArr.length-1){
+                                this.index=0;
+                            }else{
+                                this.index++;
+                            }
+                        },2000)
+                    },
                 }
 			})
 
